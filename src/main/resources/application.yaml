@@ -1,0 +1,23 @@
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${random.int}
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+    preferIpAddress: true
+    metadata-map:
+      zone: A
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    prefer-same-zone-eureka: true
+    serviceUrl:
+      defaultZone: ${currencyservice.eurekaurl:http://localhost:8761/eureka}
+   
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+     
+  

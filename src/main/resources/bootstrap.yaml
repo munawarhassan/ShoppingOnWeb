@@ -1,0 +1,13 @@
+spring: 
+  cloud:
+    config:
+      uri: ${currencyservice.configserverurl:http://localhost:8888}
+      fail-fast: false   
+  application:
+    name: shoppingonweb
+  profiles:
+    active: dev
+
+server:
+  port: 8091
+
